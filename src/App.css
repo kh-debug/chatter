@@ -56,9 +56,9 @@ html {
 
 .messages{
   display:flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   flex:1;
-  justify-content: flex-end;
+  overflow:auto;
 }
 
 .message-row{
@@ -68,10 +68,11 @@ html {
 .message{
   background:black;
   color:white;
-  border-radius:10px;
-  margin:10px;
+  border-radius: 18px;
+  margin:5px;
   display:inline-block;
-  padding: 4px 12px;
+  padding: 8px 15px;
+  float: right;
 }
 
 .text-input{
@@ -87,8 +88,8 @@ html {
 
 .send-button{
   position:absolute;
-  right:0.6rem;;
-  top:0.5rem;
+  right:0.55rem;;
+  top:0.55rem;
   border-radius: 100%;
   border:1px solid white;
   background: white;
@@ -97,6 +98,22 @@ html {
   outline:none;
   height:1.4rem;
   width:1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button[disabled]{
+  background:grey;
+  cursor:default;
+}
+
+.send-button > svg {
+  color:black;
+}
+
+.send-button[disabled] > svg {
+  color:white;
 }
 
 .input{ 

@@ -1,5 +1,6 @@
 
 import {useState} from 'react'
+import { IoSend } from "react-icons/io5";
 
 function TextInput(props) {
   const [text, setText] = useState('')
@@ -23,7 +24,9 @@ function TextInput(props) {
       onKeyPress={keyPressed}
     />
     <button onClick={sendMessage} disabled={!text} className="send-button">
-      ↑
+      < IoSend 
+        color="white" text="send" 
+        style={{minWidth:'0.7rem', marginLeft:2}}/>
     </button>
   </footer>
 }
