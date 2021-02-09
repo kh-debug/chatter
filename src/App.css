@@ -21,6 +21,10 @@ html {
   }
 }
 
+*{
+  box-sizing:border-box;
+}
+
 .App {
   text-align: center;
   background: #ff7e5f;  /* fallback for old browsers */
@@ -30,24 +34,25 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   background: rgba(255,255,255,0.2);
-  border-bottom:1px solid white;
+  border-bottom: 0.09rem solid white;
   height: 2.5rem;
-  display:flex;
+  display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 0.35rem;
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
 }
 
 .logo{
-  height:1.8rem;
-  width:1.8rem;
-  margin-right:10px;
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-right: 0.5rem;
   background: url(./img/chat.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -55,74 +60,148 @@ html {
 }
 
 .messages{
-  display:flex;
+  display: flex;
   flex-direction: column-reverse;
-  flex:1;
-  overflow:auto;
+  flex: 1;
+  overflow: auto;
 }
 
 .message-row{
-  width:100%;
+  display: flex;
+  width: 100%;
 }
 
 .message{
-  background:black;
-  color:white;
-  border-radius: 18px;
-  margin:5px;
-  display:inline-block;
-  padding: 8px 15px;
-  float: right;
+  background: black;
+  color: white;
+  border-radius: 1.1rem;
+  margin: 0.6rem;
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  position: relative; 
+}
+
+.message-name{
+  position: absolute;
+  top: -0.8rem;
+  left: 0.5rem;
+  font-size: 0.55rem;
+  font-weight: bold;
+  color: black;
 }
 
 .text-input{
-  background: rgba(255,255,255,0.2);
-  border-top:1px solid white;
-  height:2.5rem;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background: rgba(51,51,51,0.01);
+  border-top: 0.09rem solid white;
+  height: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 .send-button{
-  position:absolute;
-  right:0.55rem;;
-  top:0.55rem;
+  position: absolute;
+  right: 0.65rem;;
+  top: 0.5rem;
   border-radius: 100%;
-  border:1px solid white;
-  background: white;
+  border: 0.05rem solid white;
+  background:white;
   color: black; 
-  cursor:pointer;
-  outline:none;
-  height:1.4rem;
-  width:1.4rem;
+  cursor: pointer;
+  outline: none;
+  height: 1.3rem;
+  width: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .send-button[disabled]{
-  background:grey;
-  cursor:default;
+  background: grey;
+  cursor: default;
 }
 
 .send-button > svg {
-  color:black;
+  color: black;
 }
 
 .send-button[disabled] > svg {
-  color:white;
+  color: white;
 }
 
 .input{ 
-  height:1.65rem;
+  height: 1.65rem;
   width: calc(100% - 1rem);
   background: rgba(0,0,0,0.5);
-  border-radius:0.8rem; 
-  outline:none;
-  border:1px solid white;
-  color:white;
-  padding-left:10px;
+  border-radius: 0.8rem; 
+  outline: none;
+  border: 0.05rem solid white;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.name-picker{
+  display: flex;
+  margin: 0 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.name-picker input {
+  max-width: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.input-user{
+  position: relative;
+  height: 1.65rem;
+  width: calc(100% - 1rem);
+  background: rgba(0,0,0,0.5);
+  border-radius: 0.8rem; 
+  outline: none;
+  border: 0.05rem solid white;
+  color: white;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-user{
+  position: absolute;
+  right: 0.65rem;;
+  top: 0.5rem;
+  border-radius: 100%;
+  border: 0.05rem solid white;
+  background:white;
+  color: black; 
+  cursor: pointer;
+  outline: none;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-user{
+  position: absolute;
+  right: 0.65rem;;
+  top: 0.5rem;
+  border-radius: 100%;
+  border: 0.05rem solid white;
+  background:white;
+  color: black; 
+  cursor: pointer;
+  outline: none;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
