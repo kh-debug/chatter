@@ -10,6 +10,7 @@ function TextInput(props) {
     props.send(text)
     setText('')
   }
+
   function keyPressed(e){
     if(e.key==='Enter') {
         sendMessage()

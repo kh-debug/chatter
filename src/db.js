@@ -12,7 +12,7 @@ function useDB(room) {
     function add(m) {
         setMessages(current => {
             const msgs = [m, ...current]
-            msgs.sort((a,b)=> b.date.seconds - a.date.seconds)
+            msgs.sort((a,b)=> (b.date && b.date.seconds) - (a.date && a.date.seconds))
             return msgs
         })
     }
@@ -30,7 +30,7 @@ function useDB(room) {
             if (type==='added') add({...doc.data(),id:doc.id})
             if (type==='removed') remove(doc.id)
         }))
-    }, [])
+    }, [room])
     return messages
 }
 
@@ -45,13 +45,13 @@ db.delete = function(id) {
 export { db, useDB }
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCxnHdHGicbw16DmQfEbNVy7XD6ENprVNQ",
-    authDomain: "chatter2021-2b8fb.firebaseapp.com",
-    projectId: "chatter2021-2b8fb",
-    storageBucket: "chatter2021-2b8fb.appspot.com",
-    messagingSenderId: "778098356347",
-    appId: "1:778098356347:web:c396b31d7a0a5c0c6c32de"
-};
+    apiKey: "AIzaSyBgmLTXxo_rdIkV0mcIThp23sN-iAqeX70",
+    authDomain: "chatter-d927b.firebaseapp.com",
+    projectId: "chatter-d927b",
+    storageBucket: "chatter-d927b.appspot.com",
+    messagingSenderId: "4722169895",
+    appId: "1:4722169895:web:741dc2f97b26c38f6ad602"
+  };
 
 firebase.initializeApp(firebaseConfig)
 store = firebase.firestore()

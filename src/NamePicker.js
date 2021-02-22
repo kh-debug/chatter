@@ -11,6 +11,7 @@ function NamePicker(props){
         setShowInput(false)
         localStorage.setItem('username',username)
     }
+    
     function keyPressed(e){
         if(e.key==='Enter') {
             save()
